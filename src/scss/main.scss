@@ -1,0 +1,95 @@
+/* 
+==============================================
+CONTENT:	Project Name Here
+AUTHOR:		Your Name Here
+==============================================
+
+TABLE OF CONTENTS:
+
+0. Reset
+1. Main Layout
+2. Content
+
+==============================================
+*/
+
+/* 0. Reset ================================= */
+@import 'reset';
+
+
+/* 1. Main Layout ================================= */
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	background: #eee;
+}
+
+
+
+
+/* 2. Content ================================= */
+
+.wrapper {
+	background-color: #D1B3C4;
+	height: 100vh;
+	width: 100%;
+	display: flex;
+	margin: 0 auto;
+	flex-direction: column;
+	align-items: center;
+
+	// .heading-wrapper {
+	// 	background-color: #B392AC;
+	// 	color: #eee;
+	// 	text-transform: uppercase;
+	// 	font-s
+	// }
+
+	.category-wrapper {
+		background-color: #B392AC;
+		height: 4em;
+		width: 90%;
+		border-radius: 1em;
+		display: flex;
+		justify-content: space-between;
+		margin: 2em 0;
+		align-items: center;
+		padding: 0 3em;
+		font-size: 20px;
+		color: #eee;
+
+		h3 {
+			order: 5;
+		}
+
+		//The circle seems to be a little off-center to the left
+		.countdown-timer {
+			order: 2;
+			background-color: #735D78;
+			border-radius: 50%;
+			padding: 3em 1em;
+			font-weight: bold;
+		}
+	}
+
+	.main-content-wrapper{
+		background-color: #B392AC;
+		height: 35em;
+		width: 65%;
+		border-radius: 1em;
+		margin: 3em 0;
+		display: flex;
+		align-items: center;
+
+		div{
+			height: 33em;
+			width: 100%;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+	}
+}

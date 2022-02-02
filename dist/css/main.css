@@ -1,0 +1,141 @@
+/* 
+==============================================
+CONTENT:	Project Name Here
+AUTHOR:		Your Name Here
+==============================================
+
+TABLE OF CONTENTS:
+
+0. Reset
+1. Main Layout
+2. Content
+
+==============================================
+*/
+/* 0. Reset ================================= */
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* 1. Main Layout ================================= */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: #eee;
+}
+
+/* 2. Content ================================= */
+.wrapper {
+  background-color: #D1B3C4;
+  height: 100vh;
+  width: 100%;
+  display: -webkit-flex;
+  display: flex;
+  margin: 0 auto;
+  -webkit-flex-direction: column;
+          flex-direction: column;
+  -webkit-align-items: center;
+          align-items: center;
+}
+.wrapper .category-wrapper {
+  background-color: #B392AC;
+  height: 4em;
+  width: 90%;
+  border-radius: 1em;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: space-between;
+          justify-content: space-between;
+  margin: 2em 0;
+  -webkit-align-items: center;
+          align-items: center;
+  padding: 0 3em;
+  font-size: 20px;
+  color: #eee;
+}
+.wrapper .category-wrapper h3 {
+  -webkit-order: 5;
+          order: 5;
+}
+.wrapper .category-wrapper .countdown-timer {
+  -webkit-order: 2;
+          order: 2;
+  background-color: #735D78;
+  border-radius: 50%;
+  padding: 3em 1em;
+  font-weight: bold;
+}
+.wrapper .main-content-wrapper {
+  background-color: #B392AC;
+  height: 35em;
+  width: 65%;
+  border-radius: 1em;
+  margin: 3em 0;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+          align-items: center;
+}
+.wrapper .main-content-wrapper div {
+  height: 33em;
+  width: 100%;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: center;
+          justify-content: center;
+  -webkit-align-items: center;
+          align-items: center;
+}
+/*# sourceMappingURL=main.css.map */
