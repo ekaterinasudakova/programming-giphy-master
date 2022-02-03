@@ -74,9 +74,16 @@ table {
 
 body {
   background: #eee;
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
 }
 
 /* 2. Content ================================= */
+.landing {
+  display: none;
+}
+
 .wrapper {
   background-color: #D1B3C4;
   height: 100vh;
@@ -88,6 +95,24 @@ body {
           flex-direction: column;
   -webkit-align-items: center;
           align-items: center;
+  -webkit-justify-content: space-around;
+          justify-content: space-around;
+  padding: 2em 0;
+}
+.wrapper .heading-wrapper {
+  background-color: #B392AC;
+  color: #eee;
+  text-transform: uppercase;
+  font-size: 85px;
+  width: 90%;
+  height: 2em;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: center;
+          justify-content: center;
+  -webkit-align-items: center;
+          align-items: center;
+  border-radius: 0.5em;
 }
 .wrapper .category-wrapper {
   background-color: #B392AC;
@@ -98,18 +123,29 @@ body {
   display: flex;
   -webkit-justify-content: space-between;
           justify-content: space-between;
-  margin: 2em 0;
   -webkit-align-items: center;
           align-items: center;
-  padding: 0 3em;
-  font-size: 20px;
+  padding: 2.5em 3em;
   color: #eee;
+}
+.wrapper .category-wrapper h2 {
+  font-size: 35px;
+}
+.wrapper .category-wrapper input {
+  background-color: #E8C2CA;
+  border-radius: 1em;
+  border: none;
+  padding: 1em;
+  width: 45%;
+  font-size: 20px;
+  text-align: center;
 }
 .wrapper .category-wrapper h3 {
   -webkit-order: 5;
           order: 5;
 }
 .wrapper .category-wrapper .countdown-timer {
+  display: none;
   -webkit-order: 2;
           order: 2;
   background-color: #735D78;
@@ -119,23 +155,21 @@ body {
 }
 .wrapper .main-content-wrapper {
   background-color: #B392AC;
-  height: 35em;
+  height: 30em;
   width: 65%;
   border-radius: 1em;
-  margin: 3em 0;
   display: -webkit-flex;
   display: flex;
-  -webkit-align-items: center;
-          align-items: center;
+  -webkit-flex-direction: row;
+          flex-direction: row;
+  -webkit-flex-wrap: wrap;
+          flex-wrap: wrap;
 }
 .wrapper .main-content-wrapper div {
-  height: 33em;
-  width: 100%;
-  display: -webkit-flex;
-  display: flex;
-  -webkit-justify-content: center;
-          justify-content: center;
-  -webkit-align-items: center;
-          align-items: center;
+  width: 33%;
+  height: 33%;
+  background-position: center;
+  background-size: 75%;
+  background-repeat: no-repeat;
 }
 /*# sourceMappingURL=main.css.map */
