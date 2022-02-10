@@ -22,7 +22,7 @@ let getGif = function(searchTerm, callback, limit) {
 
 
 
-//repeated variables
+//Repeated variables section
 const mainContentWrapper = document.querySelector('.main .main-content-wrapper')
 let mainContentDivs = mainContentWrapper.children
 let mainContentDivsArr = Array.from(mainContentDivs)
@@ -31,7 +31,9 @@ const timerBox = document.querySelector('.main .countdown-timer')
 console.log(timerBox)
 
 
+//Game grid generator & populator section
 let generateGrid = function(){
+
 	//primary gif group
 	getGif('cat', function(gifData) {
 		// console.log(gifData)
@@ -61,25 +63,22 @@ let generateGrid = function(){
 	})
 }
 
-//game timer
+//Game timer section
 var seconds = 30;
 let gameClockIntervalID = setInterval(function timer(){
 	seconds--
 	console.log(seconds)
 	if (seconds == 0){
 		clearInterval(gameClockIntervalID)
+		//display new div
 		alert('Times up')
 	}
 	timerBox.innerHTML = seconds
 }, 1000)
 
 
-
-//starting score
+//Scoring section
 var score = 0
-// console.log('starting score =' + score)
-
-//Scoring on click
 function markSelection(){
 	if (this.classList.contains('cat')){
 		score-=1
