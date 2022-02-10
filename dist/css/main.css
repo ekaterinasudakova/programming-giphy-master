@@ -131,6 +131,10 @@ body {
 .wrapper .category-wrapper h2 {
   font-size: 35px;
 }
+.wrapper .category-wrapper .scoring {
+  display: -webkit-flex;
+  display: flex;
+}
 .wrapper .category-wrapper input {
   background-color: #E8C2CA;
   border-radius: 1em;
@@ -145,13 +149,13 @@ body {
           order: 5;
 }
 .wrapper .category-wrapper .countdown-timer {
-  display: none;
-  -webkit-order: 2;
-          order: 2;
+  display: -webkit-flex;
+  display: flex;
   background-color: #735D78;
   border-radius: 50%;
-  padding: 3em 1em;
+  padding: 3em 3em;
   font-weight: bold;
+  font-size: 20px;
 }
 .wrapper .main-content-wrapper {
   background-color: #B392AC;

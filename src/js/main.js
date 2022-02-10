@@ -7,7 +7,8 @@
 let getGif = function(searchTerm, callback, limit) {
 	// learn about how the giphy API wants you to construct your URLs to make a request here:
 	// https://developers.giphy.com/docs/api/endpoint#search
-	const GIPHY_API = 'https://api.giphy.com/v1/gifs/search?api_key=' + GIPHY_API_KEY + '&limit=' + limit + '&offset=15&rating=G&';
+	let offset = Math.floor(Math.random() * 500);
+	const GIPHY_API = 'https://api.giphy.com/v1/gifs/search?api_key=' + GIPHY_API_KEY + '&limit=' + limit + '&offset=' + offset + '&rating=G&';
 	
 	// axios is a package for fetching data via ajax.
 	axios.get(GIPHY_API + 'q=' + searchTerm)
@@ -21,40 +22,82 @@ let getGif = function(searchTerm, callback, limit) {
 
 
 
-//generates random number 
-var randm = Math.floor(Math.random() * 7)+1;
-console.log(randm);
+//repeated variables
+const mainContentWrapper = document.querySelector('.main .main-content-wrapper')
+let mainContentDivs = mainContentWrapper.children
+let mainContentDivsArr = Array.from(mainContentDivs)
+const scoreBox = document.querySelector('.score-box')
+const timerBox = document.querySelector('.main .countdown-timer')
+console.log(timerBox)
 
 
-let mainContentWrapper = document.querySelector('.main .main-content-wrapper')
-console.log(mainContentWrapper.children)
+let generateGrid = function(){
+	//primary gif group
+	getGif('cat', function(gifData) {
+		// console.log(gifData)
+		gifData.forEach((gif,i) => {
+			mainContentDivsArr[i].style.backgroundImage = "url(" + gif.images.original.url + ")"
+			//replace hard-coded cat with searchTerm
+			mainContentDivsArr[i].classList.add('cat')
+		});
+	}, 8)
+	
+	//outlier gif group
+	getGif('dog', function(gifData) {
+		// console.log(gifData[0].images.original.url)
+		mainContentDivsArr[8].style.backgroundImage = "url(" + gifData[0].images.original.url + ")"
+		mainContentDivsArr[8].classList.remove('cat')
+	}, 1)
+	
+	
+	//randomizing the order of the gifs
+	let sortedMainContentDivsArr = mainContentDivsArr.sort(function(a,b){
+		if (Math.random() > 0.5){
+			return -1
+		}
+		else {
+			return 1
+		}
+	})
+}
 
+//game timer
+var seconds = 30;
+let gameClockIntervalID = setInterval(function timer(){
+	seconds--
+	console.log(seconds)
+	if (seconds == 0){
+		clearInterval(gameClockIntervalID)
+		alert('Times up')
+	}
+	timerBox.innerHTML = seconds
+}, 1000)
+
+
+
+//starting score
+var score = 0
+// console.log('starting score =' + score)
+
+//Scoring on click
 function markSelection(){
-	if (mainContentWrapper.children.classList = 'cat'){
-		console.log("good")
+	if (this.classList.contains('cat')){
+		score-=1
+		// console.log('new score = ' + score)
+		scoreBox.innerHTML = score
 	} else {
-		//why is it saying good for the dog container?
-		console.log("wrong")
+		score+=1
+		// console.log('new score = ' + score)
+		scoreBox.innerHTML = score
 	}
 }
-
-for (i = 0, len = mainContentWrapper.children.length; i < len; i++ ){
-	mainContentWrapper.children[i].onclick = markSelection;
+for (i = 0, len = mainContentDivsArr.length; i < len; i++ ){
+	mainContentDivs[i].addEventListener('click', markSelection)
+	mainContentDivs[i].addEventListener('click', generateGrid)
 }
 
-// simple example of how to get cat gifs and console log the results
-getGif('cat', function(gifData) {
-	console.log(gifData)
-	gifData.forEach((gif,i) => {
-		mainContentWrapper.children[i].style.backgroundImage = "url(" + gif.images.original.url + ")"
-		//find way to replace hard-coded cat with searchTerm
-		mainContentWrapper.children[i].classList.add('cat')
-	});
-}, 8)
-getGif('dog', function(gifData) {
-	console.log(gifData[0].images.original.url)
-	//randomize the location of image by inserting it at different parts of array
-	mainContentWrapper.children[8].style.backgroundImage = "url(" + gifData[0].images.original.url + ")"
-}, 1)
+generateGrid()
+
+
 
 
