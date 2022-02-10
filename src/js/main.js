@@ -23,15 +23,17 @@ let getGif = function(searchTerm, callback, limit) {
 let mainContentWrapper = document.querySelector('.main .main-content-wrapper')
 console.log(mainContentWrapper.children)
 
-
-mainContentWrapper.children.onclick = function(){
-	//find correct way to say this, because it's not showing up right now
+function markSelection(){
 	if (mainContentWrapper.children.classList = 'cat'){
 		console.log("good")
 	} else {
+		//why is it saying good for the dog container?
 		console.log("wrong")
 	}
+}
 
+for (i = 0, len = mainContentWrapper.children.length; i < len; i++ ){
+	mainContentWrapper.children[i].onclick = markSelection;
 }
 
 /*
