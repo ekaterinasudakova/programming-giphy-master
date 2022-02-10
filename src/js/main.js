@@ -20,6 +20,12 @@ let getGif = function(searchTerm, callback, limit) {
 }
 
 
+
+//generates random number 
+var randm = Math.floor(Math.random() * 7)+1;
+console.log(randm);
+
+
 let mainContentWrapper = document.querySelector('.main .main-content-wrapper')
 console.log(mainContentWrapper.children)
 
@@ -36,9 +42,7 @@ for (i = 0, len = mainContentWrapper.children.length; i < len; i++ ){
 	mainContentWrapper.children[i].onclick = markSelection;
 }
 
-/*
- * simple example of how to get cat gifs and console log the results
- */
+// simple example of how to get cat gifs and console log the results
 getGif('cat', function(gifData) {
 	console.log(gifData)
 	gifData.forEach((gif,i) => {
