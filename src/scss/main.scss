@@ -24,20 +24,11 @@ TABLE OF CONTENTS:
 }
 
 body {
-	background: #eee;
+	background: #B392AC;
 	height: 100%;
 	margin: 0;
 	overflow: hidden;
 }
-
-
-
-
-/* 2. Content ================================= */
-.landing{
-	display: none;
-}
-
 .wrapper {
 	background-color: #D1B3C4;
 	height: 100vh;
@@ -48,70 +39,157 @@ body {
 	align-items: center;
 	justify-content: space-around;
 	padding: 2em 0;
+}
+
+/* 2. Content ================================= */
+
+
+.landing{
+	display: none;
 
 	.heading-wrapper {
 		background-color: #B392AC;
 		color: #eee;
 		text-transform: uppercase;
-		font-size: 85px;
 		width: 90%;
-		height: 2em;
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		border-radius: .5em;
+		border-radius: 1em;
+		padding: 3em;
+
+		h1{
+			font-size: 75px;
+		}
 	}
 
 	.category-wrapper {
 		background-color: #B392AC;
-		height: 4em;
 		width: 90%;
 		border-radius: 1em;
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
-		padding: 2.5em 3em;
 		color: #eee;
+		padding: 2em;
 
 		h2 {
-		font-size: 35px;
-		}
-		.scoring {
-			display: flex;
-		}
-
+			font-size: 30px;
+			}
 		input {
 			background-color: #E8C2CA;
 			border-radius: 1em;
 			border: none;
-			padding: 1em;
+			padding: 10px;
 			width: 45%;
 			font-size: 20px;
 			text-align: center;
 		}
-		h3 {
-			order: 5;
+	}
+	.info-start-wrapper{
+		width: 70%;
+		display: flex;
+		flex-direction: row;
+		justify-content: space-evenly;
+		color: #eee;
+
+		.main-content-wrapper{
+			background-color: #B392AC;
+			border-radius: 1em;
+			display: flex;
+			flex-direction: row;
+			flex-wrap: wrap;
+			width: 70%;
+	
+			div{
+				font-size: 20px;
+				line-height: 1.5;
+				text-align: center;
+				padding: 2em;
+			}
+		}
+		.button-wrapper{
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			width: 25%;
+			
+			button{
+				display: block;
+				border: none;
+				width: 100%;
+				//I know this is not a solid way to do it, but how can I have the button fill the entire
+				//container? When I set padding, the text moves off-center
+				height: 100%;
+				background-color: #B392AC;
+				border-radius: 1em;
+				font-size: 20px;
+				text-transform: uppercase;
+				color: #eee;
+			}
+		}	
+	}
+	
+}
+
+
+.main{
+	display: none;
+
+	.parameters-wrapper {
+		background-color: #B392AC;
+		width: 90%;
+		height: 7em;
+		border-radius: 1em;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 0 2em;
+		color: #eee;
+
+		.category{
+			width: 33%;
+			font-size: 25px;
+			order: 1;
+			display: flex;
+			justify-content: center;
+			
+			.selected-category{
+				margin-left: 5px;
+			}
 		}
 
-		//The circle seems to be a little off-center to the left
-		.countdown-timer {
+		.scoring {
+			width: 33%;
+			font-size: 25px;
 			display: flex;
+			justify-content: center;
+			order: 3;
+
+			.score-box{
+				margin-left: 5px;
+			}
+		}
+
+		.countdown-timer {
 			background-color: #735D78;
 			border-radius: 50%;
-			padding: 3em 3em;
+			padding: 1em;
 			font-weight: bold;
-			font-size: 20px;
+			font-size: 50px;
+			order: 2;
 		}
 	}
 
 	.main-content-wrapper{
 		background-color: #B392AC;
-		height: 30em;
-		width: 65%;
+		height: 33em;
+		width: 70%;
 		border-radius: 1em;
 		display: flex;
 		flex-direction: row;
 		flex-wrap: wrap;
+		padding: 1em;
 
 		div{
 			width: 33%;
@@ -122,3 +200,70 @@ body {
 		}
 	}
 }
+
+.ending{
+	display: flex;
+
+	.heading-wrapper {
+		background-color: #B392AC;
+		color: #eee;
+		text-transform: uppercase;
+		width: 90%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		border-radius: 1em;
+		padding: 3em;
+
+		h1{
+			font-size: 75px;
+		}
+	}
+
+	.category-wrapper {
+		background-color: #B392AC;
+		width: 90%;
+		border-radius: 1em;
+		display: flex;
+		justify-content: space-evenly;
+		align-items: center;
+		color: #eee;
+		padding: 2em;
+
+		h2 {
+			font-size: 30px;
+			}
+		.total-points{
+			font-size: 30px;
+		}
+	}
+
+	.info-restart-wrapper{
+		width: 70%;
+		display: flex;
+		flex-direction: row;
+		justify-content: space-evenly;
+		color: #eee;
+
+		.button-wrapper{
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			width: 70%;
+			
+			button{
+				display: block;
+				border: none;
+				width: 100%;
+				height: 100%;
+				background-color: #B392AC;
+				border-radius: 1em;
+				font-size: 40px;
+				text-transform: uppercase;
+				color: #eee;
+				padding: 2em;
+			}
+		}	
+	}
+}
+

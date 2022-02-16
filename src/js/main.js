@@ -29,7 +29,26 @@ let mainContentDivsArr = Array.from(mainContentDivs)
 const scoreBox = document.querySelector('.score-box')
 const timerBox = document.querySelector('.main .countdown-timer')
 console.log(timerBox)
+//buttons
+const startButton = document.querySelector('.landing .button-wrapper button')
+//page-state variables
+const landingPage = document.querySelector('.landing')
+const mainPage = document.querySelector('.main')
+const endingPage = document.querySelector('.ending')
 
+const searchInput = document.querySelector('.search-field')
+console.log(searchInput)
+let selectedCategory = searchInput.value
+
+//click on start button
+startButton.addEventListener('click', function (){
+	console.log(searchInput.value)
+	
+	// //change display flex to display flex on .landing
+	// landingPage.style.display = "none"
+	// //change display none to display flex on .main
+	// mainPage.style.display = "flex"
+})
 
 //Game grid generator & populator section
 let generateGrid = function(){
@@ -64,17 +83,17 @@ let generateGrid = function(){
 }
 
 //Game timer section
-var seconds = 30;
-let gameClockIntervalID = setInterval(function timer(){
-	seconds--
-	console.log(seconds)
-	if (seconds == 0){
-		clearInterval(gameClockIntervalID)
-		//display new div
-		alert('Times up')
-	}
-	timerBox.innerHTML = seconds
-}, 1000)
+// var seconds = 30;
+// let gameClockIntervalID = setInterval(function timer(){
+// 	seconds--
+// 	console.log(seconds)
+// 	if (seconds == 0){
+// 		clearInterval(gameClockIntervalID)
+// 		//display new div
+// 		alert('Times up')
+// 	}
+// 	timerBox.innerHTML = seconds
+// }, 1000)
 
 
 //Scoring section
@@ -96,6 +115,7 @@ for (i = 0, len = mainContentDivsArr.length; i < len; i++ ){
 }
 
 generateGrid()
+
 
 
 

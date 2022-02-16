@@ -20,42 +20,62 @@
 				<div class="category-wrapper">
 					<h2>Select a category:</h2>
 					<input type="text" class="search-field" placeholder="category theme">
-					<div class="countdown-timer">time-remaining</div>
 				</div>
-				<div class="main-content-wrapper">
-					<div>
-						You will be responsible for selecting only the gifs 
-						in the category you chose above. In order to level up, select all the gifs that apply 
-						before the timer runs out. As you level up, the gif grid will expand. The time will increase but not proportionately.
+				<div class="info-start-wrapper">
+					<div class="main-content-wrapper">
+						<div>
+							You will be responsible for selecting only the gifs in the category you chose above. For every correct selection, you gain 1 point. For every incorrect selection, you loose 1 point. How many points can you gain in 30 seconds?
+						</div>
+					</div>
+					<div class="button-wrapper">
+						<button type="button">Start</button>
 					</div>
 				</div>
 			</div>
 		</div>
 
 
-		<div class="wrapper main">
-			<div class="category-wrapper">
-				<h2>Category: Dogs</h2>
-				<h2 class="scoring">Points:
-					<div class="score-box">0</div>
-				</h2>
-				<div class="countdown-timer">30</div>
-			</div>
-			<div class="main-content-wrapper">
-				<div></div>
-				<div></div>
-				<div></div>
-				<div></div>
-				<div></div>
-				<div></div>
-				<div></div>
-				<div></div>
-				<div></div>	
+		<div class="main">
+			<div class="wrapper main">
+				<div class="parameters-wrapper">
+					<h2 class="category">Category:
+						<div class="selected-category">search field selection</div>
+					</h2>
+					<h2 class="scoring">Points:
+						<div class="score-box">0</div>
+					</h2>
+					<div class="countdown-timer">30</div>
+				</div>
+				<div class="main-content-wrapper">
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>	
+				</div>
 			</div>
 		</div>
-
-		<div class="wrapper pop-up"></div>
-		<div class="wrapper ending"></div>
+		
+		<div class="ending">
+			<div class="wrapper">
+				<div class="heading-wrapper">
+					<h1>Time's up!</h1>
+				</div>
+				<div class="category-wrapper">
+					<h2>Total points collected:</h2>
+					<div class="total-points">0</div>
+				</div>
+				<div class="info-restart-wrapper">
+					<div class="button-wrapper">
+						<button type="button">Restart</button>
+					</div>
+				</div>
+			</div>
+		</div>
 
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
 		<script src="dist/js/secrets.js"></script>
