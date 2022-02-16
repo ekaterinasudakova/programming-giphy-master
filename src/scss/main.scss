@@ -45,7 +45,7 @@ body {
 
 
 .landing{
-	display: none;
+	display: flex;
 
 	.heading-wrapper {
 		background-color: #B392AC;
@@ -202,7 +202,7 @@ body {
 }
 
 .ending{
-	display: flex;
+	display: none;
 
 	.heading-wrapper {
 		background-color: #B392AC;

@@ -97,7 +97,8 @@ body {
 
 /* 2. Content ================================= */
 .landing {
-  display: none;
+  display: -webkit-flex;
+  display: flex;
 }
 .landing .heading-wrapper {
   background-color: #B392AC;
@@ -263,8 +264,7 @@ body {
 }
 
 .ending {
-  display: -webkit-flex;
-  display: flex;
+  display: none;
 }
 .ending .heading-wrapper {
   background-color: #B392AC;

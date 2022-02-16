@@ -38,16 +38,16 @@ const endingPage = document.querySelector('.ending')
 
 const searchInput = document.querySelector('.search-field')
 console.log(searchInput)
-let selectedCategory = searchInput.value
 
 //click on start button
 startButton.addEventListener('click', function (){
 	console.log(searchInput.value)
 	
-	// //change display flex to display flex on .landing
-	// landingPage.style.display = "none"
-	// //change display none to display flex on .main
-	// mainPage.style.display = "flex"
+	//change display flex to display flex on .landing
+	landingPage.style.display = "none"
+	//change display none to display flex on .main
+	mainPage.style.display = "flex"
+	generateGrid()
 })
 
 //Game grid generator & populator section
@@ -64,7 +64,8 @@ let generateGrid = function(){
 	}, 8)
 	
 	//outlier gif group
-	getGif('dog', function(gifData) {
+	console.log(searchInput)
+	getGif(searchInput.value, function(gifData) {
 		// console.log(gifData[0].images.original.url)
 		mainContentDivsArr[8].style.backgroundImage = "url(" + gifData[0].images.original.url + ")"
 		mainContentDivsArr[8].classList.remove('cat')
@@ -114,7 +115,7 @@ for (i = 0, len = mainContentDivsArr.length; i < len; i++ ){
 	mainContentDivs[i].addEventListener('click', generateGrid)
 }
 
-generateGrid()
+
 
 
 
